@@ -97,6 +97,7 @@ export default function Form(props) {
                         keyboardType={type}
                         testID={field.testID || name}
                         autoCapitalize={field.autoCapitalize || "sentences"}
+                        autoCorrect={field.autoCorrect || true}
                         key={key}/>);
 
         //CHECK IF TYPE IS DROPDOWN

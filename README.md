@@ -1,15 +1,29 @@
 # React Native Basic Form
 
+###### forked from [here](https://github.com/MosesEsan/react-native-basic-form)
+
 A simple React Native Form component with TextInput (including multiline), DropDown and Image fields.",
 
 
 ### Installation
 
-```bash
-$ npm install --save react-native-basic-form
+##### NPM
 
-//dependencies (Reat Native CLI only)
+```shell script
+$ npm install --save react-native-basic-forms
+
+#dependencies (Reat Native CLI only)
 npm i --save react-native-vector-icons  
+react-native link react-native-vector-icon
+```
+
+##### Yarn
+
+```shell script
+$ yarn add react-native-basic-forms
+
+#dependencies (Reat Native CLI only < v0.16)
+yarn add react-native-vector-icons  
 react-native link react-native-vector-icon
 ```
 
@@ -29,7 +43,6 @@ export default function Example(props) {
         {label:"Premium", value:2}
     ];
     
-    //Used in EDIT MODE
     const initialData = {
         "image": "http://res.cloudinary.com/ddv9bxonm/image/upload/v1585512850/ib9c0dml4dlksi8xgvob.jpg"
         "email": "Johnsmith@yahoo.com",
@@ -43,7 +56,8 @@ export default function Example(props) {
 
     const fields = [
         {name: 'image', label: 'Profile Image', required: true, type: TYPES.Image},
-        {name: 'email', label: 'Email Address', required: true},
+        {name: 'username', label: 'Username', required: true, autoCapitalize: "none", autoCorrect: false},
+        {name: 'email', label: 'Email Address', required: true, type: TYPES.Email},
         {name: 'password', label: 'Password', required: true, secure: true},
         {name: 'account_type', label: 'Account Type', required: true, type: TYPES.Dropdown, options: options},
         {name: 'price', label: 'ENTRANCE FEE', required: true, type:TYPES.Number},
@@ -90,7 +104,18 @@ export default function Example(props) {
 };
 ```
 
-| prop | value | required/optional | description | default |
+#### Field Types
+| Type | Notes |
+| ---- | ----- |
+| Text | Default|
+| Number | |
+| Dropdown | |
+| Image | |
+| Email | Sets the keyboard to display email-address type |
+
+#### Props
+
+| Prop | Value | Required/Optional | Description | Default |
 | ---- | ----- | ----------------- | ----------- | ----------- |
 | title | string | optional | The button title | "Submit" |
 | fields | object | required | the fields to show | [] |
@@ -101,5 +126,18 @@ export default function Example(props) {
 | style | object | optional | the style for the container | {} |
 | buttonStyle | object | optional | the style for the button | {} |
 | keyboardShouldPersistTaps | string | optional | Determines when the keyboard should stay visible after a tap.| 'handled' |
+
+#### Field Props
+
+| Prop | Value | Required/Optional | Description | Default |
+| ---- | ----- | ----------------- | ----------- | ----------- |
+| name | string | optional | The field title | "" |
+| label | string | optional | The field label | "" |
+| required | bool | optional | Whether the field is required | false |
+| value | string | optional | The field value | "" |
+| autoCapitalize | string | optional | The field auto capitalize setting | "sentences" |
+| autoCorrect | bool | optional | The field auto correct setting | true |
+| secure | bool | optional | Whether the value should be masked | false |
+| type | string | optional | The field type | TYPES.Text (see above) |
 
 keyboardShouldPersistTaps:https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps

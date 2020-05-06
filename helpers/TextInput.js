@@ -4,7 +4,7 @@ import {View, StyleSheet} from 'react-native';
 import {Input, Icon} from 'react-native-elements';
 
 const TextInput = (props) => {
-    let {label, value, errorMessage, placeholder, secure, onChangeText, keyboardType, testID, multiline} = props;
+    let {label, value, errorMessage, placeholder, secure, onChangeText, keyboardType, autoCapitalize, testID, multiline} = props;
 
     const [visible, setVisibility] = useState(secure);
 
@@ -26,6 +26,7 @@ const TextInput = (props) => {
                 keyboardType={keyboardType}
                 testID={testID}
                 multiline={multiline}
+                autoCapitalize={autoCapitalize}
                 errorProps={{testID:`${testID}InputError`}}
             />
             {
@@ -51,6 +52,7 @@ TextInput.defaultProps = {
     multiline: false,
     onChangeText: null,
     keyboardType: 'default',
+    autoCapitalize: 'sentences',
 
 
 

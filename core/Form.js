@@ -10,7 +10,7 @@ import DateInput from "../helpers/DateInput";
 
 const FormContext = React.createContext();
 
-export const TYPES = {Text: "default", Number: "numeric", Dropdown: "dropdown", Image: "image", Date: "date"};
+export const TYPES = {Text: "default", Number: "numeric", Dropdown: "dropdown", Image: "image", Date: "date", Email: "email-address"};
 
 export default function Form(props) {
     const {fields, initialData, onSubmit, title, loading, showImagePicker} = props;
@@ -96,6 +96,7 @@ export default function Form(props) {
                         onChangeText={onChangeText}
                         keyboardType={type}
                         testID={field.testID || name}
+                        autoCapitalize={field.autoCapitalize || "sentences"}
                         key={key}/>);
 
         //CHECK IF TYPE IS DROPDOWN

@@ -1,6 +1,6 @@
 {
   "name": "react-native-basic-forms",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple React Native form component with TextInput (including multiline), DropDown, Image and Date fields.",
   "homepage": "https://github.com/olliesplayground/react-native-basic-forms",
   "bugs": {
